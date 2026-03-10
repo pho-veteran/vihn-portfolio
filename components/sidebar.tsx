@@ -11,23 +11,27 @@ export function Sidebar() {
 
   // Track active section based on scroll position
   useEffect(() => {
-    const sectionEls = navLinks
-      .map((link) => document.getElementById(link.href.slice(1)))
-      .filter((el): el is HTMLElement => el !== null);
+    const sectionIds = navLinks.map((link) => link.href.slice(1));
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
+    const handleScroll = () => {
+      // Find the section closest to the top of the viewport (above the center line)
+      let current = sectionIds[0];
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const rect = el.getBoundingClientRect();
+        // Section is "active" if its top has scrolled past the top quarter of the viewport
+        if (rect.top <= window.innerHeight * 0.35) {
+          current = id;
         }
-      },
-      { rootMargin: "-50% 0px -50% 0px" }
-    );
+      }
+      setActiveSection(current);
+    };
 
-    sectionEls.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Prevent background scroll when mobile menu is open
