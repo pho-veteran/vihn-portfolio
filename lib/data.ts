@@ -1,34 +1,11 @@
 export const siteConfig = {
-  name: "Alex Chen",
-  role: "Full Stack Developer",
-  tagline: "I build modern web experiences with clean code and thoughtful design.",
-  bio: `I'm a passionate developer who loves crafting elegant solutions to complex problems. 
-Currently focused on building performant, accessible web applications using modern technologies. 
-I enjoy the intersection of design and engineering — creating interfaces that are both beautiful and functional.`,
-  email: "alex@example.com",
-  github: "https://github.com",
-  linkedin: "https://linkedin.com",
-  location: "San Francisco, CA",
+  name: "Nguyen Thanh Vinh",
+  role: "College Student",
+  tagline: "Full-Stack Developer exploring DevOps, Cloud, and AI",
+  email: "vinhnt.23it@vku.udn.vn",
+  github: "https://github.com/pho-veteran",
+  location: "Da Nang, Vietnam",
 };
-
-export const skills = [
-  {
-    category: "Frontend",
-    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML/CSS"],
-  },
-  {
-    category: "Backend",
-    items: ["Node.js", "Python", "PostgreSQL", "REST APIs", "GraphQL"],
-  },
-  {
-    category: "Tools",
-    items: ["Git", "Docker", "VS Code", "Figma", "Linux"],
-  },
-  {
-    category: "Cloud",
-    items: ["AWS", "Vercel", "Netlify", "GitHub Actions", "Cloudflare"],
-  },
-];
 
 export const projects = [
   {
@@ -66,7 +43,6 @@ export const projects = [
 
 export const navLinks = [
   { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
   { label: "Resume", href: "#resume" },
   { label: "Contact", href: "#contact" },

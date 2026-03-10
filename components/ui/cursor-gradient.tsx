@@ -52,7 +52,7 @@ export function CursorGradient() {
   return (
     <div
       ref={dotRef}
-      className="pointer-events-none fixed left-0 top-0 z-0 h-[1000px] w-[1000px] rounded-full transition-opacity duration-700"
+      className="pointer-events-none fixed left-0 top-0 z-0 h-250 w-250 rounded-full transition-opacity duration-700"
       style={{
         opacity: 0,
         background:

@@ -1,4 +1,4 @@
-import { ArrowDown, Github, Linkedin } from "lucide-react";
+import { ArrowDown, Github } from "lucide-react";
 import { siteConfig } from "@/lib/data";
 
 export function Hero() {
@@ -6,7 +6,7 @@ export function Hero() {
     <section className="relative flex min-h-screen items-center justify-center px-6">
       {/* Subtle gradient background */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 left-1/2 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
+        <div className="absolute -top-40 left-1/2 h-125 w-200 -translate-x-1/2 rounded-full bg-primary/5 blur-3xl" />
       </div>
 
       <div className="relative mx-auto max-w-5xl py-32">
@@ -52,15 +52,6 @@ export function Hero() {
               aria-label="GitHub"
             >
               <Github className="h-5 w-5" />
-            </a>
-            <a
-              href={siteConfig.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground transition-colors hover:text-foreground"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="h-5 w-5" />
             </a>
           </div>
         </div>

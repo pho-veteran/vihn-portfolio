@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Alex Chen — Full Stack Developer",
+  title: "Nguyễn Thành Vinh",
   description:
-    "Portfolio of Alex Chen, a full stack developer building modern web experiences with clean code and thoughtful design.",
+    "Portfolio of Nguyen Thanh Vinh, a college student currently study at Vietnam-Korea University of Information and Communication Technology. Showcasing projects, skills, and experience in web development, cloud computing, and software engineering.",
 };
 
 export default function RootLayout({

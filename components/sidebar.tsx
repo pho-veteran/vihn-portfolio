@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Github, Linkedin, Mail, Menu, X } from "lucide-react";
+import { Github, Mail, Menu, X } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { navLinks, siteConfig } from "@/lib/data";
 
@@ -41,13 +41,13 @@ export function Sidebar() {
   return (
     <>
       {/* Desktop sidebar */}
-      <aside className="hidden lg:flex lg:w-80 lg:shrink-0 lg:flex-col lg:justify-between lg:sticky lg:top-0 lg:h-screen lg:px-10 lg:py-14">
+      <aside className="hidden md:flex md:w-64 lg:w-80 md:shrink-0 md:flex-col md:justify-between md:sticky md:top-0 md:h-screen md:px-8 lg:px-10 md:py-14">
         <div>
           <div className="mt-0">
-            <h1 className="text-3xl font-bold tracking-tight">
+            <h1 className="text-4xl font-bold tracking-tight">
               {siteConfig.name}
             </h1>
-            <p className="mt-1.5 text-sm font-medium text-primary">
+            <p className="mt-2 text-sm font-medium text-primary">
               {siteConfig.role}
             </p>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -104,15 +104,6 @@ export function Sidebar() {
             <Github className="h-4 w-4" />
           </a>
           <a
-            href={siteConfig.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground transition-all duration-200 hover:text-foreground hover:bg-accent hover:scale-110"
-            aria-label="LinkedIn"
-          >
-            <Linkedin className="h-4 w-4" />
-          </a>
-          <a
             href={`mailto:${siteConfig.email}`}
             className="inline-flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground transition-all duration-200 hover:text-foreground hover:bg-accent hover:scale-110"
             aria-label="Email"
@@ -126,7 +117,7 @@ export function Sidebar() {
       </aside>
 
       {/* Mobile header */}
-      <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-end border-b border-border bg-background/90 px-5 py-3 backdrop-blur-md lg:hidden">
+      <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-end border-b border-border bg-background/90 px-5 py-3 backdrop-blur-md md:hidden">
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <button
@@ -145,7 +136,7 @@ export function Sidebar() {
 
       {/* Mobile overlay menu */}
       {mobileOpen && (
-        <div className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-background/95 backdrop-blur-md lg:hidden">
+        <div className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-background/95 backdrop-blur-md md:hidden">
           <nav className="flex flex-col items-center gap-6">
             {navLinks.map((link) => (
               <a
@@ -168,15 +159,6 @@ export function Sidebar() {
               aria-label="GitHub"
             >
               <Github className="h-5 w-5" />
-            </a>
-            <a
-              href={siteConfig.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-muted-foreground transition-colors hover:text-foreground"
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="h-5 w-5" />
             </a>
             <a
               href={`mailto:${siteConfig.email}`}
