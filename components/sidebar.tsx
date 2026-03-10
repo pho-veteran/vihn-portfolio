@@ -41,24 +41,16 @@ export function Sidebar() {
   return (
     <>
       {/* Desktop sidebar */}
-      <aside className="hidden lg:flex lg:w-70 lg:shrink-0 lg:flex-col lg:justify-between lg:sticky lg:top-0 lg:h-screen lg:border-r lg:border-border lg:px-8 lg:py-10">
+      <aside className="hidden lg:flex lg:w-80 lg:shrink-0 lg:flex-col lg:justify-between lg:sticky lg:top-0 lg:h-screen lg:px-10 lg:py-14">
         <div>
-          <a
-            href="#"
-            className="font-mono text-sm font-semibold tracking-tight text-foreground"
-          >
-            {siteConfig.name.split(" ")[0].toLowerCase()}
-            <span className="text-primary">.</span>dev
-          </a>
-
-          <div className="mt-8">
-            <h1 className="text-xl font-bold tracking-tight">
+          <div className="mt-0">
+            <h1 className="text-3xl font-bold tracking-tight">
               {siteConfig.name}
             </h1>
-            <p className="mt-1 text-sm font-medium text-primary">
+            <p className="mt-1.5 text-sm font-medium text-primary">
               {siteConfig.role}
             </p>
-            <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground">
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
               {siteConfig.tagline}
             </p>
           </div>
@@ -71,21 +63,27 @@ export function Sidebar() {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className={`group flex items-center gap-3 py-1.5 text-xs uppercase tracking-widest transition-all ${
+                      className={`group flex items-center py-1.5 font-mono text-[15px] transition-all duration-200 ${
                         isActive
                           ? "text-foreground"
                           : "text-muted-foreground hover:text-foreground"
                       }`}
                     >
                       <span
-                        className={`h-px transition-all duration-300 ${
+                        className={`mr-1.5 transition-colors duration-200 ${
                           isActive
-                            ? "w-8 bg-foreground"
-                            : "w-4 bg-muted-foreground/40 group-hover:w-6 group-hover:bg-muted-foreground"
+                            ? "text-primary"
+                            : "text-primary/30 group-hover:text-primary/70"
                         }`}
-                      />
-                      <span className={isActive ? "font-semibold" : "font-medium"}>
-                        {link.label}
+                      >
+                        {"//"}
+                      </span>
+                      <span
+                        className={`transition-transform duration-200 group-hover:translate-x-0.5 ${
+                          isActive ? "font-semibold" : ""
+                        }`}
+                      >
+                        {link.label.toLowerCase()}
                       </span>
                     </a>
                   </li>
@@ -100,7 +98,7 @@ export function Sidebar() {
             href={siteConfig.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground hover:bg-accent"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground transition-all duration-200 hover:text-foreground hover:bg-accent hover:scale-110"
             aria-label="GitHub"
           >
             <Github className="h-4 w-4" />
@@ -109,14 +107,14 @@ export function Sidebar() {
             href={siteConfig.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground hover:bg-accent"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground transition-all duration-200 hover:text-foreground hover:bg-accent hover:scale-110"
             aria-label="LinkedIn"
           >
             <Linkedin className="h-4 w-4" />
           </a>
           <a
             href={`mailto:${siteConfig.email}`}
-            className="inline-flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:text-foreground hover:bg-accent"
+            className="inline-flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground transition-all duration-200 hover:text-foreground hover:bg-accent hover:scale-110"
             aria-label="Email"
           >
             <Mail className="h-4 w-4" />
@@ -128,14 +126,7 @@ export function Sidebar() {
       </aside>
 
       {/* Mobile header */}
-      <header className="fixed top-0 z-50 flex w-full items-center justify-between border-b border-border bg-background/90 px-5 py-3 backdrop-blur-md lg:hidden">
-        <a
-          href="#"
-          className="font-mono text-sm font-semibold tracking-tight text-foreground"
-        >
-          {siteConfig.name.split(" ")[0].toLowerCase()}
-          <span className="text-primary">.</span>dev
-        </a>
+      <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-end border-b border-border bg-background/90 px-5 py-3 backdrop-blur-md lg:hidden">
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <button
@@ -161,9 +152,10 @@ export function Sidebar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
-                className="text-lg font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className="font-mono text-lg text-muted-foreground transition-colors hover:text-foreground"
               >
-                {link.label}
+                <span className="mr-1.5 text-primary/50">{"//"}</span>
+                {link.label.toLowerCase()}
               </a>
             ))}
           </nav>

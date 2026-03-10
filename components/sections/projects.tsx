@@ -15,10 +15,10 @@ export function Projects() {
         {projects.map((project) => (
           <article
             key={project.title}
-            className="group flex flex-col rounded-lg border border-border bg-card p-5 transition-all hover:border-primary/30"
+            className="group flex flex-col rounded-lg border border-border bg-card p-5 transition-all duration-200 hover:border-primary/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/5"
           >
             <div className="mb-2 flex items-start justify-between">
-              <h3 className="text-sm font-semibold tracking-tight transition-colors group-hover:text-primary">
+              <h3 className="text-sm font-semibold tracking-tight transition-colors duration-200 group-hover:text-primary">
                 {project.title}
               </h3>
               <div className="flex items-center gap-2">
@@ -26,7 +26,7 @@ export function Projects() {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground transition-colors hover:text-foreground"
+                  className="text-muted-foreground transition-all duration-200 hover:text-foreground hover:scale-110"
                   aria-label={`${project.title} GitHub`}
                 >
                   <Github className="h-3.5 w-3.5" />
@@ -36,7 +36,7 @@ export function Projects() {
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-muted-foreground transition-all duration-200 hover:text-foreground hover:scale-110"
                     aria-label={`${project.title} demo`}
                   >
                     <ExternalLink className="h-3.5 w-3.5" />

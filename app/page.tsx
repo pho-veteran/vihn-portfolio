@@ -9,10 +9,10 @@ import { CursorGradient } from "@/components/ui/cursor-gradient";
 
 export default function Home() {
   return (
-    <div className="lg:flex">
+    <div className="relative mx-auto max-w-7xl lg:px-10 xl:px-16 lg:flex">
       <CursorGradient />
       <Sidebar />
-      <main className="min-h-screen flex-1 pt-16 lg:pt-0">
+      <main className="min-h-screen flex-1 px-4 pt-16 sm:px-6 lg:px-0 lg:pt-14">
         <About />
         <Skills />
         <Projects />

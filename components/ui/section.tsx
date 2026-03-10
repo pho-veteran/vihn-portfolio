@@ -43,9 +43,9 @@ export function Section({ id, children, className = "" }: SectionProps) {
     <section
       ref={ref}
       id={id}
-      className={`scroll-mt-16 lg:scroll-mt-0 py-14 md:py-20 ${className}`}
+      className={`scroll-mt-16 lg:scroll-mt-0 py-12 md:py-16 ${className}`}
     >
-      <div className="mx-auto max-w-3xl px-6">{children}</div>
+      <div className="mx-auto max-w-3xl">{children}</div>
     </section>
   );
 }
@@ -60,13 +60,13 @@ export function SectionHeader({
   description?: string;
 }) {
   return (
-    <div className="mb-8">
-      <p className="mb-1.5 font-mono text-xs font-medium text-primary">
-        {label}
+    <div className="mb-10">
+      <p className="mb-2 font-mono text-sm font-medium text-primary/70">
+        {"// "}{label.toLowerCase()}
       </p>
-      <h2 className="text-2xl font-bold tracking-tight">{title}</h2>
+      <h2 className="text-[1.75rem] font-bold tracking-tight">{title}</h2>
       {description && (
-        <p className="mt-2 text-sm text-muted-foreground">{description}</p>
+        <p className="mt-2 text-base text-muted-foreground">{description}</p>
       )}
     </div>
   );

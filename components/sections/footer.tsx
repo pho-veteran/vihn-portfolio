@@ -1,14 +1,9 @@
-import { siteConfig } from "@/lib/data";
-
 export function Footer() {
   return (
-    <footer className="border-t border-border px-6 py-6">
-      <div className="mx-auto flex max-w-3xl items-center justify-between text-xs text-muted-foreground">
-        <p>
-          &copy; {new Date().getFullYear()} {siteConfig.name}
-        </p>
-        <p className="font-mono">
-          Next.js &amp; Tailwind CSS
+    <footer className="pb-10 pt-6">
+      <div className="mx-auto max-w-3xl">
+        <p className="font-mono text-xs text-muted-foreground/60">
+          Built with Next.js and Tailwind CSS, deployed with Vercel.
         </p>
       </div>
     </footer>
