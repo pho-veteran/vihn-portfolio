@@ -17,13 +17,25 @@ export function ThemeToggle() {
     return <div className="h-9 w-9" />;
   }
 
+  const isDark = theme === "dark";
+
   return (
     <button
-      onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="inline-flex h-8 w-8 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-accent hover:text-foreground"
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className="group flex h-8 w-14 cursor-pointer items-center rounded-full bg-muted p-1 transition-colors duration-300 hover:bg-accent"
       aria-label="Toggle theme"
     >
-      {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
+      <span
+        className={`flex h-6 w-6 items-center justify-center rounded-full bg-background shadow-sm transition-all duration-300 group-hover:scale-110 ${
+          isDark ? "translate-x-6" : "translate-x-0"
+        }`}
+      >
+        {isDark ? (
+          <Sun className="h-3.5 w-3.5 text-primary transition-transform duration-300" />
+        ) : (
+          <Moon className="h-3.5 w-3.5 text-primary transition-transform duration-300" />
+        )}
+      </span>
     </button>
   );
 }
