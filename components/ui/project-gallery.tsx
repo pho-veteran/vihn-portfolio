@@ -47,8 +47,8 @@ export function ProjectGallery({ images, alt }: ProjectGalleryProps) {
             src={active.src}
             alt={`${alt} preview ${activeIndex + 1}`}
             fill
-            className="object-cover animate-in fade-in duration-300"
-            sizes="(max-width: 672px) 100vw, 640px"
+            className="object-cover object-top animate-in fade-in duration-300"
+            sizes="(max-width: 640px) calc(100vw - 5rem), (max-width: 768px) calc(85vw - 3rem), (max-width: 1024px) calc(75vw - 3rem), (max-width: 1280px) calc(60vw - 3rem), calc(55vw - 3rem)"
             priority={activeIndex === 0}
           />
         )}
@@ -95,7 +95,7 @@ export function ProjectGallery({ images, alt }: ProjectGalleryProps) {
                     src={image.src}
                     alt={`${alt} thumbnail ${index + 1}`}
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                     sizes="96px"
                   />
                 )}

@@ -124,6 +124,12 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (min-width: 768px) {
+  html {
+    font-size: 110%;
+  }
+}
+
 ::selection {
   background-color: var(--primary);
   color: var(--primary-foreground);

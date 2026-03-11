@@ -39,15 +39,18 @@ function ProjectCard({
           src={project.coverImage}
           alt={project.title}
           fill
-          className="object-cover transition-transform duration-300 ease-out group-hover:scale-105"
-          sizes="(max-width: 640px) 100vw, 50vw"
+          className="object-cover object-top transition-transform duration-300 ease-out group-hover:scale-105"
+          sizes="(max-width: 640px) calc(100vw - 2rem), calc(50vw - 2rem)"
         />
       </div>
 
       <div className="mb-2 flex items-start justify-between">
-        <h3 className="text-sm font-semibold tracking-tight transition-colors duration-300 ease-out group-hover:text-primary">
-          {project.title}
-        </h3>
+        <div>
+          <h3 className="text-sm font-semibold tracking-tight transition-colors duration-300 ease-out group-hover:text-primary">
+            {project.title}
+          </h3>
+          <span className="text-[11px] text-muted-foreground">{project.year}</span>
+        </div>
         <span className="flex items-center gap-1 text-[11px] text-muted-foreground opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100">
           View <ChevronRight className="h-3 w-3" />
         </span>
@@ -98,9 +101,12 @@ function ProjectModal({
       >
         {/* Fixed header */}
         <div className="flex shrink-0 items-center gap-4 border-b border-border px-6 py-4">
-          <DialogTitle className="min-w-0 flex-1 truncate text-base font-semibold tracking-tight sm:text-lg">
-            {project.title}
-          </DialogTitle>
+          <div className="min-w-0 flex-1">
+            <DialogTitle className="truncate text-base font-semibold tracking-tight sm:text-lg">
+              {project.title}
+            </DialogTitle>
+            <span className="text-xs text-muted-foreground">{project.year}</span>
+          </div>
 
           <div className="flex shrink-0 items-center gap-2">
             {showProjectDemo && (
@@ -205,7 +211,7 @@ export function Projects() {
       <SectionHeader
         label="Projects"
         title="Featured Work"
-        description="A selection of projects I've built for school assignments and on my own time."
+        description="A selection of projects I've built for school assignments."
       />
 
       <div className="grid gap-4 sm:grid-cols-2">
