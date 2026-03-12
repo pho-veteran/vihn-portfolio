@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { Section, SectionHeader } from "@/components/ui/section";
 import { projects, type Project } from "@/lib/data";
@@ -10,7 +10,7 @@ import {
   DialogContent,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { ExternalLink, ChevronRight, X } from "lucide-react";
+import { ExternalLink, ChevronRight, ChevronDown, X, MousePointerClick } from "lucide-react";
 import { ProjectGallery } from "@/components/ui/project-gallery";
 import { RepositorySection } from "@/components/ui/repository-section";
 
@@ -88,6 +88,22 @@ function ProjectModal({
   open: boolean;
   onOpenChange: (open: boolean) => void;
 }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScroll, setCanScroll] = useState(false);
+
+  const checkScrollable = useCallback(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    setCanScroll(el.scrollHeight - el.scrollTop - el.clientHeight > 20);
+  }, []);
+
+  useEffect(() => {
+    if (!open) return;
+    // Check after content renders
+    const timeout = setTimeout(checkScrollable, 100);
+    return () => clearTimeout(timeout);
+  }, [open, project, checkScrollable]);
+
   if (!project) return null;
 
   const isMultiRepo = project.repositories.length > 1;
@@ -131,7 +147,11 @@ function ProjectModal({
         </div>
 
         {/* Scrollable body */}
-        <div className="modal-scroll flex-1 space-y-6 overflow-y-auto p-6">
+        <div
+          ref={scrollRef}
+          onScroll={checkScrollable}
+          className="modal-scroll flex-1 space-y-6 overflow-y-auto p-6"
+        >
           {/* Image Gallery */}
           <ProjectGallery images={project.images} alt={project.title} />
 
@@ -192,6 +212,15 @@ function ProjectModal({
             <RepositorySection repositories={project.repositories} />
           </div>
         </div>
+
+        {/* Scroll indicator */}
+        {canScroll && (
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center pb-3">
+            <span className="animate-bounce rounded-full bg-muted/80 p-1.5 shadow-sm backdrop-blur-sm">
+              <ChevronDown className="h-4 w-4 text-muted-foreground" />
+            </span>
+          </div>
+        )}
       </DialogContent>
     </Dialog>
   );
@@ -213,6 +242,11 @@ export function Projects() {
         title="Featured Work"
         description="A selection of projects I've built for school assignments."
       />
+
+      <p className="mb-3 flex items-center justify-center gap-1.5 text-xs text-muted-foreground/60">
+        <MousePointerClick className="h-3.5 w-3.5" />
+        Click on a card to view details
+      </p>
 
       <div className="grid gap-4 sm:grid-cols-2">
         {projects.map((project) => (
