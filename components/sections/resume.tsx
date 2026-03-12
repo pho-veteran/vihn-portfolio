@@ -1,28 +1,34 @@
 import { Section, SectionHeader } from "@/components/ui/section";
 import { Download } from "lucide-react";
 
+const CV_URL = "/CV - Nguyen Thanh Vinh.pdf";
+
 export function Resume() {
   return (
     <Section id="resume">
       <SectionHeader
         label="Resume"
         title="Experience"
-        description="A summary of my professional background and education."
+        description="A summary of my background and education."
       />
 
-      <div className="rounded-lg border border-border bg-card p-6 text-center md:p-8">
-        <p className="mx-auto max-w-md text-sm text-muted-foreground">
-          Interested in my full experience? Download my resume for a detailed
-          overview of my skills, projects, and education.
-        </p>
+      <div className="overflow-hidden rounded-lg border border-border bg-card">
+        <iframe
+          src={CV_URL}
+          className="h-[70vh] min-h-125 w-full"
+          title="Curriculum Vitae"
+        />
+      </div>
 
+      <div className="mt-4 flex justify-center">
         <a
-          href="/resume.pdf"
-          download
-          className="mt-5 inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-primary px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+          href="/cv"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex h-10 items-center justify-center gap-2 rounded-lg bg-primary px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
         >
           <Download className="h-4 w-4" />
-          Download Resume
+          View CV
         </a>
       </div>
     </Section>

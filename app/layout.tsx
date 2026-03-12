@@ -22,6 +22,16 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://vihn.dev";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: "Nguyễn Thành Vinh – Software Engineering Student",
+  icons: {
+    icon: [
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png" }],
+    other: [
+      { rel: "manifest", url: "/site.webmanifest" },
+    ],
+  },
   description:
     "Portfolio of Nguyen Thanh Vinh – Software Engineering student at VKU. Showcasing projects and experience in web development, cloud computing, and DevOps.",
   openGraph: {
