@@ -32,7 +32,7 @@ export function About() {
         </p>
         <p>
           I enjoy building {hi("web and mobile applications")} and have experience
-          developing {hi("full-stack projects")}.
+          developing {hi("end-to-end projects")}.
         </p>
         <p>
           Recently, I&apos;ve been exploring {hi("DevOps")}, {hi("cloud computing")}, and{" "}

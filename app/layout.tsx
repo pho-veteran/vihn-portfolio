@@ -21,23 +21,23 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://vihn.dev";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Nguyễn Thành Vinh – Full-Stack Developer",
+  title: "Nguyễn Thành Vinh – Software Engineering Student",
   description:
-    "Portfolio of Nguyen Thanh Vinh – full-stack developer and Software Engineering student at VKU. Showcasing projects and experience in web development, cloud computing, and DevOps.",
+    "Portfolio of Nguyen Thanh Vinh – Software Engineering student at VKU. Showcasing projects and experience in web development, cloud computing, and DevOps.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: siteUrl,
     siteName: "Nguyễn Thành Vinh – Portfolio",
-    title: "Nguyễn Thành Vinh – Full-Stack Developer",
+    title: "Nguyễn Thành Vinh – Software Engineering Student",
     description:
-      "Portfolio of Nguyen Thanh Vinh – full-stack developer and Software Engineering student at VKU. Showcasing projects and experience in web development, cloud computing, and DevOps.",
+      "Portfolio of Nguyen Thanh Vinh – Software Engineering student at VKU. Showcasing projects and experience in web development, cloud computing, and DevOps.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nguyễn Thành Vinh – Full-Stack Developer",
+    title: "Nguyễn Thành Vinh – Software Engineering Student",
     description:
-      "Portfolio of Nguyen Thanh Vinh – full-stack developer and Software Engineering student at VKU.",
+      "Portfolio of Nguyen Thanh Vinh – Software Engineering student at VKU.",
   },
 };
 

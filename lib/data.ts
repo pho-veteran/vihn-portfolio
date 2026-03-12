@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Nguyen Thanh Vinh",
   role: "College Student",
-  tagline: "Full-Stack Developer exploring DevOps, Cloud, and AI",
+  tagline: "Software Engineering Student exploring DevOps, Cloud, and AI",
   email: "vinhnt.23it@vku.udn.vn",
   github: "https://github.com/pho-veteran",
   location: "Da Nang, Vietnam",
@@ -116,7 +116,7 @@ export const projects: Project[] = [
     repositories: [
       {
         name: "stoom",
-        description: "Full-stack Next.js application covering the frontend UI, API routes, WebRTC room logic, and real-time collaboration features.",
+        description: "Next.js application covering the frontend UI, API routes, WebRTC room logic, and real-time collaboration features.",
         sourceUrl: "https://github.com/pho-veteran/stoom",
       },
     ],
@@ -125,7 +125,7 @@ export const projects: Project[] = [
     title: "Koflix",
     year: 2025,
     description:
-      "A full-stack movie streaming platform targeting Vietnamese users, featuring an AI-powered recommendation engine and offline playback. Admins manage the content catalogue via a web dashboard while end users stream and download movies on Android.",
+      "A movie streaming platform targeting Vietnamese users, featuring an AI-powered recommendation engine and offline playback. Admins manage the content catalogue via a web dashboard while end users stream and download movies on Android.",
     coverImage: "/projects/koflix/koflix-cover.png",
     images: [
       { type: "youtube", src: "hwer-XZEG-E", desc: "Koflix Demo video" },
@@ -180,7 +180,7 @@ export const projects: Project[] = [
     title: "VStore",
     year: 2024,
     description:
-      "A full-stack e-commerce platform that lets customers browse products, manage a cart and wishlist, and pay online. Store owners get a multi-tenant admin dashboard to manage products, orders, and revenue analytics.",
+      "An e-commerce platform that lets customers browse products, manage a cart and wishlist, and pay online. Store owners get a multi-tenant admin dashboard to manage products, orders, and revenue analytics.",
     coverImage: "/projects/vstore/1_store.png",
     images: [
       { src: "/projects/vstore/1_store.png", desc: "Storefront homepage" },
