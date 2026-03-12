@@ -17,10 +17,28 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://vihn.dev";
+
 export const metadata: Metadata = {
-  title: "Nguyễn Thành Vinh",
+  metadataBase: new URL(siteUrl),
+  title: "Nguyễn Thành Vinh – Full-Stack Developer",
   description:
-    "Portfolio of Nguyen Thanh Vinh, a college student currently study at Vietnam-Korea University of Information and Communication Technology. Showcasing projects, skills, and experience in web development, cloud computing, and software engineering.",
+    "Portfolio of Nguyen Thanh Vinh – full-stack developer and Software Engineering student at VKU. Showcasing projects and experience in web development, cloud computing, and DevOps.",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "Nguyễn Thành Vinh – Portfolio",
+    title: "Nguyễn Thành Vinh – Full-Stack Developer",
+    description:
+      "Portfolio of Nguyen Thanh Vinh – full-stack developer and Software Engineering student at VKU. Showcasing projects and experience in web development, cloud computing, and DevOps.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nguyễn Thành Vinh – Full-Stack Developer",
+    description:
+      "Portfolio of Nguyen Thanh Vinh – full-stack developer and Software Engineering student at VKU.",
+  },
 };
 
 export default function RootLayout({
