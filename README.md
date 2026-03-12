@@ -32,3 +32,7 @@ public/       # Static assets & CV PDF
 |-------|-------------|
 | `/` | Main portfolio (About, Projects, Resume, Contact) |
 | `/cv` | Redirects to CV PDF |
+
+## Inspiration
+
+Design inspired by [brittanychiang.com](https://brittanychiang.com/) and other modern portfolio sites.
